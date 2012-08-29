@@ -40,4 +40,4 @@ define([i18nmodule!modulenameA], function() {
 
 ## License
 
-All the plugins are released under the MIT license.
+Released under the MIT license.
