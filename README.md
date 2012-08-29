@@ -34,6 +34,9 @@ define([i18nmodule!modulenameA], function() {
 })
 ```
 
+## Optimizer
+The plugin will include all dependancies defined in a module, regardless of the current locale. This will ensure all modules are optimized for best performance.
+
 ## Author
 
 [Aaron Gloege](http://www.aarongloege.com/)
