@@ -1,9 +1,7 @@
 i18nmodule
 ==========
 
-A plugin for [RequireJS](http://requirejs.org) for loading dymanic modules based on locale.
-
-If a locale is defined in the requires config, that locale will be used, otherwise, the plugin will attempt to determine the locale from the browser.
+A plugin for [RequireJS](http://requirejs.org) for loading dynamic modules based on locale. the i18n plugin for RequireJS works great for localizing text, but what if you need to localize functionality? i18nmodule fills that role.
 
 ## Config
 
@@ -24,19 +22,21 @@ require.config({
 });
 ```
 
+If a locale is defined in the config, that locale will be used. If the locale is not defined, the plugin will attempt to determine the locale from the browser.
+
 ## Call Example
 
 ```js
 define([i18nmodule!modulenameA], function() {
-    
+    // Dependancies will be loaded from modulenameA.
+    // If the locale defined in requirejs's config, or the browser's language string is not in modulenameA, then modulenameA.root will be used.
+    // If modulenameA.root wasn't defined, then no modules would be loaded.
 })
 ```
 
 ## Author
 
 [Aaron Gloege](http://www.aarongloege.com/)
-
-
 
 ## License
 
