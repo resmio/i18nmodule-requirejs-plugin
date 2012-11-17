@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>I18nmodule: A RequireJS Plugin by aarongloege</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/aarongloege/i18nmodule-requirejs-plugin">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/aarongloege/i18nmodule-requirejs-plugin/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/aarongloege/i18nmodule-requirejs-plugin/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>I18nmodule: A RequireJS Plugin</h1>
+          <p>A plugin for RequireJS to load dymanic modules based on locale.</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/aarongloege">aarongloege</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p>This is a plugin for <a href="http://requirejs.org">RequireJS</a> meant for loading dynamic modules based on locale. The i18n plugin for RequireJS works great for localizing text, but what if you need to localize functionality? i18nmodule fills that role.</p>
+
+<h2>Config</h2>
+
+<p>This plugin requires that you define a RequireJS config. Your config will looks something like this:</p>
+
+<div class="highlight"><pre><span class="nx">require</span><span class="p">.</span><span class="nx">config</span><span class="p">({</span>
+    <span class="nx">i18nmodule</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">modulenameA</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">root</span><span class="o">:</span> <span class="p">[</span><span class="s1">'url/to/module'</span><span class="p">],</span>
+            <span class="s1">'en-US'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'url/to/another/module'</span><span class="p">],</span>
+            <span class="s1">'en-GB'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'url/to/even/another/module'</span><span class="p">],</span>
+        <span class="p">},</span>
+        <span class="nx">anothermodulename</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">'en-NZ'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'url/to/module'</span><span class="p">]</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>If a locale is defined in your config, that locale will be used. If the locale is not defined, the plugin will attempt to determine the locale from the browser.</p>
+
+<h2>Call Example</h2>
+
+<div class="highlight"><pre><span class="nx">define</span><span class="p">([</span><span class="nx">i18nmodule</span><span class="o">!</span><span class="nx">modulenameA</span><span class="p">],</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// Dependancies will be loaded from modulenameA.</span>
+    <span class="c1">// If the locale defined in requirejs's config, or the browser's language string is not in modulenameA, then modulenameA.root will be used.</span>
+    <span class="c1">// If modulenameA.root wasn't defined, then no modules would be loaded.</span>
+<span class="p">})</span>
+</pre></div>
+
+<h2>Optimizer</h2>
+
+<p>The plugin will include all dependancies defined in a module, regardless of the current locale. This will ensure all modules are optimized for best performance.</p>
+
+<h2>Author</h2>
+
+<p><a href="http://www.aarongloege.com/">Aaron Gloege</a></p>
+
+<h2>License</h2>
+
+<p>Released under the MIT license.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
